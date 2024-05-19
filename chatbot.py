@@ -61,7 +61,8 @@ def classify_intent(input_text):
     
     #Tokenize
     doc = nlp(input_text)
-    
+    # Remove stopwords from tokens
+    doc = [token for token in doc if not token.is_stop]
     main_intent = "default"
     
     #Keywords
